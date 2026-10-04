@@ -31,7 +31,7 @@
             </li>
             <li><hr class="dropdown-divider my-1"></li>
             <li>
-              <a class="dropdown-item d-flex align-items-center text-danger py-2" href="/uts-pwl/auth/logout">
+              <a class="dropdown-item d-flex align-items-center text-danger py-2" href="/uts-pwl/logout">
                 <i class="bi bi-box-arrow-right me-2"></i>
                 <span>Logout</span>
               </a>
