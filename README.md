@@ -18,6 +18,6 @@ Tutorial setup no root 100% work no password download link di bio
 ## Struktur Folder
 
 - `controllers/`: Tempat buat logic halaman / controller (contoh: `Home.php`).
-- `models/`: Tempat naro query db (contoh: `User.php`).
+- `models/`: Tempat naro query db (contoh: `Account.php`).
 - `views/`: Tempat file tampilan HTML/PHP (contoh: `home/index.php`).
 - `core/`: Ada deh pokoknya gausah diotak atik anuannya

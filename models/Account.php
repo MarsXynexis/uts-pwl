@@ -1,8 +1,8 @@
 <?php
 
-class User
+class Account
 {
-    private $table = 'users';
+    private $table = 'accounts';
     private $db;
 
     public function __construct()
@@ -12,7 +12,7 @@ class User
 
     public function getAll()
     {
-        $this->db->query("SELECT * FROM " . $this->table);
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE deleted_at IS NULL");
         return $this->db->resultSet();
     }
 }
