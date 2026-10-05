@@ -25,8 +25,6 @@
                 <div class="card-body p-4">
 
                   <div class="text-center mb-4">
-                    <!-- <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle mb-3" style="width: 58px; height: 58px;"><i class="bi bi-shield-check fs-2 text-primary"></i></div> -->
-
                     <div class="d-flex justify-content-center mb-3">
                       <img src="/uts-pwl/assets/img/eak.gif" alt="EAK" class="rounded-3 shadow-sm" style="width: 64px; height: 64px; object-fit: cover;">
                     </div>

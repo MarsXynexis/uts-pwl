@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller
+class AuthController extends Controller
 {
     public function index()
     {
@@ -23,7 +23,7 @@ class Login extends Controller
 
                 $user = $accountModel->findByEmail($email);
 
-                if ($user && password_verify($password, $user['password'])) {
+                if ($user && empty($user['deleted_at']) && password_verify($password, $user['password'])) {
                     $_SESSION['user'] = [
                         'id' => $user['id'],
                         'name' => $user['name'],

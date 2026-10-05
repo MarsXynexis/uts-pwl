@@ -2,7 +2,7 @@
 
 class App
 {
-    protected $controller = 'Home';
+    protected $controller = 'HomeController';
     protected $method = 'index';
     protected $params = [];
 
@@ -11,8 +11,14 @@ class App
         $url = $this->parseUrl();
 
         if (isset($url[0])) {
-            if ($url[0] === 'logout') {
-                $this->controller = 'Login';
+            if ($url[0] === 'login') {
+                $this->controller = 'AuthController';
+                $this->method = 'index';
+
+                unset($url[0]);
+
+            } elseif ($url[0] === 'logout') {
+                $this->controller = 'AuthController';
                 $this->method = 'logout';
 
                 unset($url[0]);
@@ -20,7 +26,12 @@ class App
             } else {
                 $formattedController = str_replace(' ', '', ucwords(str_replace('-', ' ', $url[0])));
 
-                if (file_exists('controllers/' . $formattedController . '.php')) {
+                if (file_exists('controllers/' . $formattedController . 'Controller.php')) {
+                    $this->controller = $formattedController . 'Controller';
+
+                    unset($url[0]);
+
+                } elseif (file_exists('controllers/' . $formattedController . '.php')) {
                     $this->controller = $formattedController;
 
                     unset($url[0]);

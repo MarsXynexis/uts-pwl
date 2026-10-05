@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
@@ -9,9 +9,6 @@ class Home extends Controller
         $data['title'] = 'Dashboard - Manajemen Akun';
         $data['active_menu'] = 'dashboard';
 
-        $this->view('layouts/header', $data);
-        $this->view('layouts/sidebar', $data);
         $this->view('home/index', $data);
-        $this->view('layouts/footer', $data);
     }
 }

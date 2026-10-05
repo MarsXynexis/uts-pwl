@@ -14,10 +14,11 @@ Tutorial setup no root 100% work no password download link di bio
    DB_PASS= (kalo laragoon tergantung orangnya)
    ```
 3. Bikin database di phpMyKisah (sesuai nama db di `.env`)
+4. Nyalain Apache & MySQL, buka di browser: `http://localhost/uts-pwl`
 
 ## Struktur Folder
 
-- `controllers/`: Tempat buat logic halaman / controller (contoh: `Home.php`).
-- `models/`: Tempat naro query db (contoh: `Account.php`).
-- `views/`: Tempat file tampilan HTML/PHP (contoh: `home/index.php`).
+- `controllers/`: Tempat buat logic halaman / controller berakhiran Controller (contoh: `HomeController.php`, `AuthController.php`, `AccountController.php`).
+- `models/`: Tempat naro query db (contoh: `Account.php`, `AccountType.php`).
+- `views/`: Tempat file tampilan HTML/PHP (contoh: `home/index.php`, `account/index.php`).
 - `core/`: Ada deh pokoknya gausah diotak atik anuannya
