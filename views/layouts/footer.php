@@ -1,6 +1,6 @@
   <footer id="footer" class="footer">
     <div class="copyright text-center py-3 text-muted">
-      &copy; UTS PWL <strong><span>TI 3C</span></strong>
+      &copy; UTS PWL <strong><span>TI 3C Tandain</span></strong>
     </div>
   </footer>
 

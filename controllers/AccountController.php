@@ -32,7 +32,7 @@ class AccountController extends Controller
 
         $data['title'] = 'Tambah Akun';
         $data['active_menu'] = 'account';
-        $data['account_types'] = $accountTypeModel->getAccountType();
+        $data['account_types'] = $accountTypeModel->getAccountTypes();
         $data['error'] = null;
         $data['old'] = [];
 
@@ -107,7 +107,7 @@ class AccountController extends Controller
 
         $data['title'] = 'Ubah Akun';
         $data['active_menu'] = 'account';
-        $data['account_types'] = $accountTypeModel->getAccountType();
+        $data['account_types'] = $accountTypeModel->getAccountTypes();
         $data['account'] = $account;
         $data['error'] = null;
 

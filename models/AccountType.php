@@ -10,7 +10,8 @@ class AccountType
         $this->db = new Database;
     }
 
-    public function getAccountType($search = null)
+    
+    public function getAccountTypes($search = null)
     {
         $query = "SELECT * FROM " . $this->table . " WHERE deleted_at IS NULL";
 
@@ -34,6 +35,15 @@ class AccountType
         $this->db->query("SELECT * FROM " . $this->table . " WHERE id = :id AND deleted_at IS NULL LIMIT 1");
 
         $this->db->bind('id', $id);
+
+        return $this->db->single();
+    }
+
+    public function findByName($name)
+    {
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE name = :name AND deleted_at IS NULL LIMIT 1");
+
+        $this->db->bind('name', $name);
 
         return $this->db->single();
     }
@@ -77,4 +87,6 @@ class AccountType
 
         return $this->db->execute();
     }
+
+    
 }

@@ -35,6 +35,14 @@ class Account
         return $this->db->resultSet();
     }
 
+
+    public function getUsedAccountTypes()
+    {
+        $this->db->query("SELECT DISTINCT account_type_id FROM accounts WHERE deleted_at IS NULL");
+
+        return $this->db->resultSet();
+    }
+
     public function getAccountById($id)
     {
         $this->db->query("SELECT * FROM " . $this->table . " WHERE id = :id AND deleted_at IS NULL LIMIT 1");
