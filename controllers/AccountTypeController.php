@@ -51,15 +51,24 @@ class AccountTypeController extends Controller
 
             if (empty($name) || empty($description)) {
                 $data['error'] = 'Semua field wajib diisi.';
+
             } else {
-                try {
-                    $accountTypeModel->updateAccountType($id, $_POST);
+                $existing = $accountTypeModel->findByName($name);
 
-                    $_SESSION['success'] = 'Tipe Akun berhasil diperbarui.';
+                if ($existing && $existing['id'] !== $id) {
+                    $data['error'] = 'Nama tipe akun sudah digunakan.';
 
-                    $this->redirect('/uts-pwl/account-type');
-                } catch (PDOException $e) {
-                    $data['error'] = 'Gagal memperbarui data tipe akun.';
+                } else {
+                    try {
+                        $accountTypeModel->updateAccountType($id, $_POST);
+
+                        $_SESSION['success'] = 'Tipe Akun berhasil diperbarui.';
+
+                        $this->redirect('/uts-pwl/account-type');
+
+                    } catch (PDOException $e) {
+                        $data['error'] = 'Gagal memperbarui data tipe akun.';
+                    }
                 }
             }
         }

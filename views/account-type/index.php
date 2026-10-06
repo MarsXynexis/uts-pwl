@@ -67,12 +67,12 @@
                             <i class="bi bi-pencil"></i>
                           </a>
 
-                          <?php if ($type['id'] !== $_SESSION['user']['id']) : ?>
+                          <?php if ($type['id'] !== $_SESSION['user']['account_type_id']) : ?>
                             <a href="/uts-pwl/account-type/delete/<?= $type['id']; ?>" class="btn btn-sm btn-outline-danger btn-delete" title="Hapus">
                               <i class="bi bi-trash"></i>
                             </a>
                           <?php else : ?>
-                            <button class="btn btn-sm btn-outline-secondary" title="Tidak dapat menghapus akun sendiri" disabled>
+                            <button class="btn btn-sm btn-outline-secondary" title="Tidak dapat menghapus tipe akun yang sedang digunakan" disabled>
                               <i class="bi bi-trash"></i>
                             </button>
                           <?php endif; ?>
@@ -81,8 +81,8 @@
                     <?php endforeach; ?>
                   <?php else : ?>
                     <tr>
-                      <td colspan="6" class="text-center py-4 text-muted">
-                        Tidak ada data akun.
+                      <td colspan="4" class="text-center py-4 text-muted">
+                        Tidak ada data tipe akun.
                       </td>
                     </tr>
                   <?php endif; ?>

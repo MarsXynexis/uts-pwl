@@ -36,17 +36,17 @@
 
               <div class="col-md-6">
                 <label for="name" class="form-label fw-semibold">Nama</label>
-                <input type="text" name="name" class="form-control" id="name" required>
+                <input type="text" name="name" class="form-control" id="name" value="<?= htmlspecialchars($data['old']['name'] ?? ''); ?>" required>
               </div>
 
               <div class="col-md-6">
                 <label for="description" class="form-label fw-semibold">Deskripsi</label>
-                <textarea name="description" class="form-control" id="description" rows="3" required></textarea>
+                <textarea name="description" class="form-control" id="description" rows="3" required><?= htmlspecialchars($data['old']['description'] ?? ''); ?></textarea>
               </div>
 
               <div class="col-12 mt-4 d-flex gap-2">
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="/uts-pwl/account" class="btn btn-secondary">Batal</a>
+                <a href="/uts-pwl/account-type" class="btn btn-secondary">Batal</a>
               </div>
 
             </form>
