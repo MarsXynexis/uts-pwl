@@ -35,7 +35,7 @@
             <form action="/uts-pwl/action/create" method="POST" class="row g-3">
 
               <div class="col-md-6">
-                <label for="action_name" class="form-label fw-semibold">Nama Aksi</label>
+                <label for="name" class="form-label fw-semibold">Nama Aksi</label>
                 <input type="text" name="name" class="form-control" id="name" value="<?= htmlspecialchars($data['old']['name'] ?? ''); ?>" required>
               </div>
 

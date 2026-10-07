@@ -17,22 +17,14 @@ class Action
                   WHERE deleted_at IS NULL";
 
         if (!empty($search)) {
-            $query .= " AND (
-                            actions.name LIKE '%$search%')
-                            OR (actions.description LIKE '%$search%'
-                            )";
-        } 
-
-       
-
-        // if (empty($search)) {
-        //     $query .= " AND (
-        //                     actions.name LIKE '%$search%')
-        //                     OR description LIKE '%$search%'
-        //                     )";
-        // }
+            $query .= " AND (name LIKE :search OR description LIKE :search)";
+        }
 
         $this->db->query($query);
+
+        if (!empty($search)) {
+            $this->db->bind('search', '%' . $search . '%');
+        }
 
         return $this->db->resultSet();
     }
@@ -70,19 +62,11 @@ class Action
 
     public function updateAction($id, $data)
     {
-        if (!empty($data['password'])) {
-            $query = "UPDATE " . $this->table . " 
-                      SET name = :name, 
-                          description = :description, 
-                          updated_at = NOW() 
-                      WHERE id = :id AND deleted_at IS NULL";
-        } else {
-            $query = "UPDATE " . $this->table . " 
-                      SET name = :name, 
-                          description = :description, 
-                          updated_at = NOW() 
-                      WHERE id = :id AND deleted_at IS NULL";
-        }
+        $query = "UPDATE " . $this->table . " 
+                  SET name = :name, 
+                      description = :description, 
+                      updated_at = NOW() 
+                  WHERE id = :id AND deleted_at IS NULL";
 
         $this->db->query($query);
 

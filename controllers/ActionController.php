@@ -72,7 +72,7 @@ class ActionController extends Controller
                         $this->redirect('/uts-pwl/action');
 
                     } catch (PDOException $e) {
-                        $data['error'] = 'Gagal menambahkan aksi.' . $e;
+                        $data['error'] = 'Gagal menambahkan aksi.';
                         $data['old'] = $_POST;
                     }
                 }
@@ -107,16 +107,24 @@ class ActionController extends Controller
                 $data['old'] = $_POST;
 
             } else {
-                try {
-                    $actionModel->updateAction($id, $_POST);
+                $existing = $actionModel->findByName($name);
 
-                    $_SESSION['success'] = 'Aksi berhasil diperbarui.';
-
-                    $this->redirect('/uts-pwl/action');
-
-                } catch (PDOException $e) {
-                    $data['error'] = 'Gagal memperbarui aksi.';
+                if ($existing && $existing['id'] !== $id) {
+                    $data['error'] = 'Nama sudah digunakan.';
                     $data['old'] = $_POST;
+
+                } else {
+                    try {
+                        $actionModel->updateAction($id, $_POST);
+
+                        $_SESSION['success'] = 'Aksi berhasil diperbarui.';
+
+                        $this->redirect('/uts-pwl/action');
+
+                    } catch (PDOException $e) {
+                        $data['error'] = 'Gagal memperbarui aksi.';
+                        $data['old'] = $_POST;
+                    }
                 }
             }
         }

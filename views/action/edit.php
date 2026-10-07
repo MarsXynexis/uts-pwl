@@ -35,12 +35,12 @@
             <form action="/uts-pwl/action/edit/<?= $data['action']['id']; ?>" method="POST" class="row g-3">
 
               <div class="col-md-6">
-                <label for="name" class="form-label fw-semibold">Nama</label>
+                <label for="name" class="form-label fw-semibold">Nama Aksi</label>
                 <input type="text" name="name" class="form-control" id="name" value="<?= htmlspecialchars($_POST['name'] ?? $data['action']['name']); ?>" required>
               </div>
 
               <div class="col-md-6">
-                <label for="description" class="form-label fw-semibold">Description</label>
+                <label for="description" class="form-label fw-semibold">Deskripsi</label>
                 <input type="text" name="description" class="form-control" id="description" value="<?= htmlspecialchars($_POST['description'] ?? $data['action']['description']); ?>" required>
               </div>
 

@@ -28,7 +28,7 @@
               <form action="/uts-pwl/action" method="GET" class="d-flex gap-2 flex-grow-1" style="max-width: 480px;">
                 <div class="input-group">
                   <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                  <input type="text" name="search" class="form-control" placeholder="Cari nama, email, NIM/NIP, atau tipe akun..." value="<?= htmlspecialchars($data['search'] ?? ''); ?>">
+                  <input type="text" name="search" class="form-control" placeholder="Cari nama atau deskripsi aksi..." value="<?= htmlspecialchars($data['search'] ?? ''); ?>">
                   <button type="submit" class="btn btn-primary">Cari</button>
 
                   <?php if (!empty($data['search'])) : ?>
@@ -48,7 +48,7 @@
                 <thead class="table-light">
                   <tr>
                     <th>Nama</th>
-                    <th>Description</th>
+                    <th>Deskripsi</th>
                     <th class="text-center" style="width: 120px;">Aksi</th>
                   </tr>
                 </thead>
@@ -64,22 +64,16 @@
                             <i class="bi bi-pencil"></i>
                           </a>
 
-                          <?php if ($act['id'] !== $_SESSION['user']['id']) : ?>
-                            <a href="/uts-pwl/action/delete/<?= $act['id']; ?>" class="btn btn-sm btn-outline-danger btn-delete" title="Hapus">
-                              <i class="bi bi-trash"></i>
-                            </a>
-                          <?php else : ?>
-                            <button class="btn btn-sm btn-outline-secondary" title="Tidak dapat menghapus akun sendiri" disabled>
-                              <i class="bi bi-trash"></i>
-                            </button>
-                          <?php endif; ?>
+                          <a href="/uts-pwl/action/delete/<?= $act['id']; ?>" class="btn btn-sm btn-outline-danger btn-delete" title="Hapus">
+                            <i class="bi bi-trash"></i>
+                          </a>
                         </td>
                       </tr>
                     <?php endforeach; ?>
                   <?php else : ?>
                     <tr>
-                      <td colspan="6" class="text-center py-4 text-muted">
-                        Tidak ada data akun.
+                      <td colspan="3" class="text-center py-4 text-muted">
+                        Tidak ada data aksi.
                       </td>
                     </tr>
                   <?php endif; ?>
