@@ -180,4 +180,4 @@ uts-pwl/
 
 ## 6. Demo Aplikasi
 
-- Tautan Video Demo: Chat aja di wa.me/6285213612620
+Link Demo: https://drive.google.com/drive/folders/1h7aJO9U5QosoAojdVfl2WTQopITQZIFR
