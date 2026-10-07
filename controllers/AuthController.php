@@ -5,7 +5,7 @@ class AuthController extends Controller
     public function index()
     {
         if (isset($_SESSION['user'])) {
-            $this->redirect('/uts-pwl');
+            $this->redirect('/uts-pwl/account');
         }
 
         $data['title'] = 'Login - Manajemen Akun';
@@ -32,7 +32,7 @@ class AuthController extends Controller
                         'status' => $user['status']
                     ];
 
-                    $this->redirect('/uts-pwl');
+                    $this->redirect('/uts-pwl/account');
 
                 } else {
                     $data['error'] = 'Email atau password salah.';

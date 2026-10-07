@@ -6,9 +6,6 @@ class HomeController extends Controller
     {
         $this->authCheck();
 
-        $data['title'] = 'Dashboard - Manajemen Akun';
-        $data['active_menu'] = 'dashboard';
-
-        $this->view('home/index', $data);
+        $this->redirect('/uts-pwl/account');
     }
 }
