@@ -92,8 +92,8 @@ class AccountTypeController extends Controller
             $name = trim($_POST['name'] ?? '');
             $description = trim($_POST['description'] ?? '');
 
-            if (empty($name) || empty($description)) {
-                $data['error'] = 'Semua field wajib diisi.';
+            if (empty($name)) {
+                $data['error'] = 'Nama field wajib diisi.';
                 $data['old'] = $_POST;
             } else {
                 $existing = $accountTypeModel->findByName($name);

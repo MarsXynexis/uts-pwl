@@ -50,7 +50,13 @@
                       <label for="password" class="form-label fw-semibold small text-secondary">Password</label>
                       <input type="password" name="password" class="form-control" id="password" required>
                     </div>
-
+                    <div class="col-12">
+                      <label for="captcha" class="form-label fw-semibold small text-secondary">Captcha</label>
+                      <div class="d-flex align-items-center gap-2">
+                        <input type="text" name="captcha" class="form-control" id="captcha" required>
+                        <img src="/uts-pwl/captcha" alt="Captcha" class="rounded-2 shadow-sm" style="height: 38px; object-fit: cover;">
+                      </div>
+                    </div>
                     <div class="col-12 mt-4">
                       <button class="btn btn-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2 fw-semibold" type="submit">
                         <i class="bi bi-box-arrow-in-right"></i> Login

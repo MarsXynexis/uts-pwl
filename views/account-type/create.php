@@ -41,7 +41,7 @@
 
               <div class="col-md-6">
                 <label for="description" class="form-label fw-semibold">Deskripsi</label>
-                <textarea name="description" class="form-control" id="description" rows="3" required><?= htmlspecialchars($data['old']['description'] ?? ''); ?></textarea>
+                <textarea name="description" class="form-control" id="description" rows="3"><?= htmlspecialchars($data['old']['description'] ?? ''); ?></textarea>
               </div>
 
               <div class="col-12 mt-4 d-flex gap-2">

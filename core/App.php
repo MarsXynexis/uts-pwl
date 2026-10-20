@@ -16,13 +16,16 @@ class App
                 $this->method = 'index';
 
                 unset($url[0]);
-
             } elseif ($url[0] === 'logout') {
                 $this->controller = 'AuthController';
                 $this->method = 'logout';
 
                 unset($url[0]);
+            } elseif ($url[0] === 'captcha') {
+                $this->controller = 'AuthController';
+                $this->method = 'captcha';
 
+                unset($url[0]);
             } else {
                 $formattedController = str_replace(' ', '', ucwords(str_replace('-', ' ', $url[0])));
 
@@ -30,12 +33,10 @@ class App
                     $this->controller = $formattedController . 'Controller';
 
                     unset($url[0]);
-
                 } elseif (file_exists('controllers/' . $formattedController . '.php')) {
                     $this->controller = $formattedController;
 
                     unset($url[0]);
-
                 } elseif (file_exists('controllers/' . $url[0] . '.php')) {
                     $this->controller = $url[0];
 
